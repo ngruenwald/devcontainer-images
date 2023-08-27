@@ -1,0 +1,8 @@
+curl # foo
+#git
+krb5-config
+krb5-user
+libarchive-tools
+openssh-client
+sshpass
+#vim
