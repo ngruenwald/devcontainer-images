@@ -2,7 +2,7 @@
 ## Common Base Image
 ##
 
-FROM python:3.11.5-slim-bookworm AS base
+FROM python:3.12.0-slim-bookworm AS base
 
 COPY packages-base.txt /
 RUN DEBIAN_FRONTEND=noninteractive\
@@ -19,7 +19,7 @@ RUN DEBIAN_FRONTEND=noninteractive\
 
 FROM base AS builder
 
-ARG ANSIBLE_VERSION=8.4.0
+ARG ANSIBLE_VERSION=8.5.0
 ENV ANSIBLE_VERSION ${ANSIBLE_VERSION}
 
 COPY packages-builder.txt /
@@ -42,5 +42,5 @@ RUN pip install --no-cache /wheels/* \
  && rm -rf /wheels
 
 RUN MITOGEN_PATH=$(python -c "import sysconfig; print(sysconfig.get_path('purelib'))")/ansible_mitogen \
- && sed -i 's|ANSIBLE_VERSION_MAX = (2, 13)|ANSIBLE_VERSION_MAX = (2, 16)|g' ${MITOGEN_PATH}/loaders.py \
+ && sed -i 's|ANSIBLE_VERSION_MAX = (2, 13)|ANSIBLE_VERSION_MAX = (2, 19)|g' ${MITOGEN_PATH}/loaders.py \
  && rm ${MITOGEN_PATH}/__pycache__/loaders*.pyc
