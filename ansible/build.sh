@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ANSIBLE_VERSION=${1:-8.5.0}     # 2.9.14
+ANSIBLE_VERSION=${1:-8.6.0}     # 2.9.14
 IMAGE_NAME=localhost/ansible
 
 buildah bud \
