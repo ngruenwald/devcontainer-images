@@ -1,7 +1,7 @@
 ansible==${ANSIBLE_VERSION}
 
 ansible-doctor    # == 2.1.1
-ansible-later     # == 3.3.5
+#ansible-later     # == 3.3.5
 ansible-lint      # == 6.17.2
 mitogen           # == 0.3.4
 molecule          # == 5.1.0
