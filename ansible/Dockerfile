@@ -2,7 +2,7 @@
 ## Common Base Image
 ##
 
-FROM python:3.12.0-slim-bookworm AS base
+FROM python:3.12.1-slim-bookworm AS base
 
 COPY packages-base.txt /
 RUN DEBIAN_FRONTEND=noninteractive\
@@ -19,7 +19,7 @@ RUN DEBIAN_FRONTEND=noninteractive\
 
 FROM base AS builder
 
-ARG ANSIBLE_VERSION=8.6.0
+ARG ANSIBLE_VERSION=9.1.0
 ENV ANSIBLE_VERSION ${ANSIBLE_VERSION}
 
 COPY packages-builder.txt /
