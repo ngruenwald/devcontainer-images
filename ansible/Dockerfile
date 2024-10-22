@@ -2,7 +2,7 @@
 ## Common Base Image
 ##
 
-FROM python:3.12.1-slim-bookworm AS base
+FROM python:3.12.7-slim-bookworm AS base
 
 COPY packages-base.txt /
 RUN DEBIAN_FRONTEND=noninteractive\
